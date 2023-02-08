@@ -3,7 +3,7 @@ terraform {
     organization = "brianhh12301"
 
     workspaces {
-      name = "linode-terraform-dns"
+      name = "devops-brian-dns"
     }
   }
   required_providers {
@@ -30,19 +30,4 @@ resource "linode_domain_record" "rasa_dns_record" {
     name = var.rasa_dns
     record_type = "A"
     target = var.nodebalancer_ip
-}
-
-resource "linode_domain_record" "github_pages" {
-    domain_id = linode_domain.master_domain.id
-    count = length(var.github_pages_ips)
-    name = var.domain_name
-    record_type = "A"
-    target = var.github_pages_ips[count.index]
-}
-
-resource "linode_domain_record" "github_cname" {
-    domain_id = linode_domain.master_domain.id
-    name = "www"
-    record_type = "CNAME"
-    target = var.github_pages_alias
 }

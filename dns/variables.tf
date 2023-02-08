@@ -35,17 +35,3 @@ variable "linode_nameservers" {
         "ns5.linode.com"
     ] 
 }
-
-variable "github_pages_alias" {
-    description = "The github pages address for your page."
-}
-
-variable "github_pages_ips" {
-    description = "The github pages ip's"
-    default     =   [
-        "185.199.108.153",
-        "185.199.109.153",
-        "185.199.110.153",
-        "185.199.111.153"
-    ]
-}

@@ -1,14 +1,15 @@
 applicationSettings:
   debugMode: true
-  initialModel: "https://github.com/DevOps-With-Brian/chatbot-auto-versioning/releases/download/0.3.1/model_0.3.1.tar.gz?raw=true"
+  initialModel: "https://github.com/DevOps-With-Brian/chatbot-auto-versioning/releases/download/0.6.0/model_0.6.0.tar.gz"
   credentials:
     additionalChannelCredentials:
       socketio:
         user_message_evt: user_uttered
         bot_message_evt: bot_uttered
         session_persistence: false
+      rest:
 image:
-  tag: "3.3.0"
+  tag: "3.4.2"
 nginx:
   enabled: false
 ingress:
