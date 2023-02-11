@@ -1,6 +1,6 @@
 applicationSettings:
   debugMode: true
-  initialModel: "https://github.com/DevOps-With-Brian/chatbot-auto-versioning/releases/download/0.6.0/model_0.6.0.tar.gz"
+  initialModel: "https://github.com/DevOps-With-Brian/chatbot-auto-versioning/releases/download/0.8.0/model_0.8.0.tar.gz"
   credentials:
     additionalChannelCredentials:
       socketio:
@@ -24,3 +24,10 @@ ingress:
     - secretName: rasa-tls
       hosts:
         - rasa.devopswithbrian.com
+
+rasa-action-server:
+  external:
+    # -- Determine if external URL is used
+    enabled: true
+    # -- URL to Rasa Action Server
+    url: "http://rasa-action-rasa-action-server/webhook"
