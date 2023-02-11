@@ -1,6 +1,6 @@
 applicationSettings:
   debugMode: true
-  initialModel: "https://github.com/DevOps-With-Brian/chatbot-auto-versioning/releases/download/0.8.0/model_0.8.0.tar.gz"
+  initialModel: "https://github.com/DevOps-With-Brian/chatbot-auto-versioning/releases/download/0.9.0/model_0.9.0.tar.gz"
   credentials:
     additionalChannelCredentials:
       socketio:
