@@ -16,8 +16,8 @@ spec:
     helm:
       valueFiles:
         - rasa-values.yaml
-    path: rasa/rasa
-    repoURL: https://helm.rasa.com  # Can point to either a Helm chart repo or a git repo.
+    path: rasa
+    repoURL: git@github.com:DevOps-With-Brian/devops-brian-lke.git  # Can point to either a Helm chart repo or a git repo.
     targetRevision: HEAD
 
   # Destination cluster and namespace to deploy the application
