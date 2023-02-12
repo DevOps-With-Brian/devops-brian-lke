@@ -15,6 +15,7 @@ spec:
   source:
     repoURL: https://helm.rasa.com  # Can point to either a Helm chart repo or a git repo.
     targetRevision: 1.17.3
+    path: rasa
 
     # helm specific config
     chart: rasa  # Set this when pulling directly from a Helm repo. DO NOT set for git-hosted Helm charts.
