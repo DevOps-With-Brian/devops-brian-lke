@@ -3,7 +3,7 @@ kind: Application
 metadata:
   name: rasa
   # You'll usually want to add your resources to the argocd namespace.
-  namespace: default
+  namespace: argocd
   # Add labels to your application object.
   labels:
     name: default
