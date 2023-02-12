@@ -8,6 +8,8 @@ metadata:
   labels:
     name: rasa
 spec:
+  # The project the application belongs to.
+  project: default
 
   # Source of the application manifests
   source:
