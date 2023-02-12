@@ -6,10 +6,10 @@ metadata:
   namespace: default
   # Add labels to your application object.
   labels:
-    name: rasa
+    name: default
 spec:
   # The project the application belongs to.
-  project: rasa
+  project: default
 
   # Source of the application manifests
   source:
