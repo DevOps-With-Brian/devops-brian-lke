@@ -1,28 +1,47 @@
-apiVersion: v2
-name: rasa
-description: Rasa Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: rasa
+  # You'll usually want to add your resources to the argocd namespace.
+  namespace: default
+  # Add labels to your application object.
+  labels:
+    name: rasa
+spec:
+  # The project the application belongs to.
+  project: default
 
-# A chart can be either an 'application' or a 'library' chart.
-#
-# Application charts are a collection of templates that can be packaged into versioned archives
-# to be deployed.
-#
-# Library charts provide useful utilities or functions for the chart developer. They're included as
-# a dependency of application charts to inject those utilities and functions into the rendering
-# pipeline. Library charts do not define any templates and therefore cannot be deployed.
-type: application
+  # Source of the application manifests
+  source:
+    repoURL: https://helm.rasa.com  # Can point to either a Helm chart repo or a git repo.
+    targetRevision: 1.17.3  # For Helm, this refers to the chart version.
 
-# This is the chart version. This version number should be incremented each time you make changes
-# to the chart and its templates, including the app version.
-# Versions are expected to follow Semantic Versioning (https://semver.org/)
-version: 0.9.0
+    # helm specific config
+    chart: rasa  # Set this when pulling directly from a Helm repo. DO NOT set for git-hosted Helm charts.
+    helm:
+      # Release name override (defaults to application name)
+      releaseName: rasa
 
-# This is the version number of the application being deployed. This version number should be
-# incremented each time you make changes to the application. Versions are not expected to
-# follow Semantic Versioning. They should reflect the version the application is using.
-appVersion: "0.9.0"
+      # Helm values files for overriding values in the helm chart
+      # The path is relative to the spec.source.path directory defined above
+      valueFiles:
+      - rasa-values.yaml
 
-dependencies:
-- name: rasa
-  version: 1.17.3
-  repository: https://helm.rasa.com
+      # Ignore locally missing valueFiles when installing Helm chart. Defaults to false
+      ignoreMissingValueFiles: false
+
+  # Destination cluster and namespace to deploy the application
+  destination:
+    # cluster API URL
+    server: https://kubernetes.default.svc
+    # or cluster name
+    # name: in-cluster
+    # The namespace will only be set for namespace-scoped resources that have not set a value for .metadata.namespace
+    namespace: default
+
+
+  # RevisionHistoryLimit limits the number of items kept in the application's revision history, which is used for
+  # informational purposes as well as for rollbacks to previous versions. This should only be changed in exceptional
+  # circumstances. Setting to zero will store no history. This will reduce storage used. Increasing will increase the
+  # space used to store the history, so we do not recommend increasing it.
+  revisionHistoryLimit: 10
