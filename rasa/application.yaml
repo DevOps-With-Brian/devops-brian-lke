@@ -9,7 +9,7 @@ metadata:
     name: rasa
 spec:
   # The project the application belongs to.
-  project: default
+  project: rasa
 
   # Source of the application manifests
   source:
