@@ -13,17 +13,21 @@ spec:
 
   # Source of the application manifests
   source:
+    repoURL: https://helm.rasa.com
+    path: rasa
+    chart: rasa
+    targetRevision: 1.17.4
+
+
     helm:
       valueFiles:
-        - rasa-values.yaml
-    path: rasa
-    repoURL: git@github.com:DevOps-With-Brian/devops-brian-lke.git  # Can point to either a Helm chart repo or a git repo.
-    targetRevision: HEAD
+        - https://raw.githubusercontent.com/DevOps-With-Brian/devops-brian-lke/main/rasa/rasa-values.yaml
 
   # Destination cluster and namespace to deploy the application
   destination:
     # cluster API URL
     server: https://kubernetes.default.svc
+    namespace: default
 
 
   # RevisionHistoryLimit limits the number of items kept in the application's revision history, which is used for
