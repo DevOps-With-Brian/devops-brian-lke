@@ -13,16 +13,14 @@ spec:
 
   # Source of the application manifests
   source:
-    repoURL: https://helm.rasa.com
+    repoURL: git@github.com:DevOps-With-Brian/devops-brian-lke.git
     path: rasa
-    chart: rasa
-    targetRevision: 1.17.4
-
-
+    targetRevision: main
     helm:
       valueFiles:
-        - https://raw.githubusercontent.com/DevOps-With-Brian/devops-brian-lke/main/rasa/rasa-values.yaml
-
+        - rasa-values.yaml
+    chart: jasper
+    version: 0.10.0
   # Destination cluster and namespace to deploy the application
   destination:
     # cluster API URL
