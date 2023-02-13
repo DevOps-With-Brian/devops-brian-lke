@@ -1,3 +1,7 @@
+apiVersion: v2
+name: jasper
+version: 1.0.0
+
 dependencies:
 - name: rasa
   version: "1.17.4"
