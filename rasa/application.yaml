@@ -16,11 +16,10 @@ spec:
     repoURL: git@github.com:DevOps-With-Brian/devops-brian-lke.git
     path: rasa
     targetRevision: main
+    chart: jasper
     helm:
       valueFiles:
         - rasa-values.yaml
-    chart: jasper
-    version: 0.10.0
   # Destination cluster and namespace to deploy the application
   destination:
     # cluster API URL
