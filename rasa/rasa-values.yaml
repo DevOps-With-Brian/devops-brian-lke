@@ -1,33 +1,34 @@
-applicationSettings:
-  debugMode: true
-  initialModel: "https://github.com/DevOps-With-Brian/chatbot-auto-versioning/releases/download/0.10.0/model_0.10.0.tar.gz"
-  credentials:
-    additionalChannelCredentials:
-      socketio:
-        user_message_evt: user_uttered
-        bot_message_evt: bot_uttered
-        session_persistence: false
-      rest:
-image:
-  tag: "3.4.2"
-nginx:
-  enabled: false
-ingress:
-  enabled: true
-  annotations: {
-    kubernetes.io/ingress.class: 'nginx',
-    cert-manager.io/cluster-issuer: "letsencrypt-prod"
-  }
-  path: "/"
-  hostname: rasa.devopswithbrian.com
-  tls:
-    - secretName: rasa-tls
-      hosts:
-        - rasa.devopswithbrian.com
-
-rasa-action-server:
-  external:
-    # -- Determine if external URL is used
+rasa:
+  applicationSettings:
+    debugMode: true
+    initialModel: "https://github.com/DevOps-With-Brian/chatbot-auto-versioning/releases/download/0.10.0/model_0.10.0.tar.gz"
+    credentials:
+      additionalChannelCredentials:
+        socketio:
+          user_message_evt: user_uttered
+          bot_message_evt: bot_uttered
+          session_persistence: false
+        rest:
+  image:
+    tag: "3.4.2"
+  nginx:
+    enabled: false
+  ingress:
     enabled: true
-    # -- URL to Rasa Action Server
-    url: "http://rasa-action-rasa-action-server/webhook"
+    annotations: {
+      kubernetes.io/ingress.class: 'nginx',
+      cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    }
+    path: "/"
+    hostname: rasa.devopswithbrian.com
+    tls:
+      - secretName: rasa-tls
+        hosts:
+          - rasa.devopswithbrian.com
+
+  rasa-action-server:
+    external:
+      # -- Determine if external URL is used
+      enabled: true
+      # -- URL to Rasa Action Server
+      url: "http://rasa-action-rasa-action-server/webhook"
