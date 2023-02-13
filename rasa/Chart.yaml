@@ -1,0 +1,4 @@
+dependencies:
+- name: rasa
+  version: "1.17.4"
+  repository: "https://rasa.helm.com/rasa"
