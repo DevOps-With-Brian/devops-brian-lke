@@ -44,8 +44,3 @@ pip install -r docs/requirements.txt
 Then you can run `make html` from the `docs` dir to build the docs which will then be located in the `docs/_build` dir.
 
 Then open the `docs/_build/index.html` in a web browser.
-
-Latest version of docs can be found [Here](https://cookiecutter-linode-tf-lke.readthedocs.io/) if you want to use the generated ones from the cookiecutter repo.
-
-# Github Pages
-If you want to use the same Github pages custom domain with your setup like this repo does, check out [GitHub Pages Docs](https://pages.github.com/) on setting up your repo.
