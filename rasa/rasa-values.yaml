@@ -1,7 +1,7 @@
 rasa:
   applicationSettings:
     debugMode: true
-    initialModel: "https://github.com/DevOps-With-Brian/chatbot-auto-versioning/releases/download/0.11.0/model_0.11.0.tar.gz"
+    initialModel: "https://github.com/DevOps-With-Brian/chatbot-auto-versioning/releases/download/0.13.0/model_0.13.0.tar.gz"
     credentials:
       additionalChannelCredentials:
         socketio:
@@ -15,17 +15,13 @@ rasa:
     enabled: false
   ingress:
     enabled: true
-    annotations: {
-      kubernetes.io/ingress.class: 'nginx',
-      cert-manager.io/cluster-issuer: "letsencrypt-prod"
-    }
+    annotations: {kubernetes.io/ingress.class: 'nginx', cert-manager.io/cluster-issuer: "letsencrypt-prod"}
     path: "/"
     hostname: rasa.devopswithbrian.com
     tls:
       - secretName: rasa-tls
         hosts:
           - rasa.devopswithbrian.com
-
   rasa-action-server:
     external:
       # -- Determine if external URL is used
