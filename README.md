@@ -1,5 +1,6 @@
 # devops-brian-lke
 [![version](https://img.shields.io/badge/version-0.0.1-blue)](https://github.com/btotharye/devops-brian-lke/blob/main/CHANGELOG.md)
+[![Documentation Status](https://readthedocs.org/projects/devops-brian-lke/badge/?version=latest)](https://devops-brian-lke.readthedocs.io/en/latest/?badge=latest)
 
 If using custom dns and setting up a domain then you will want on your domain registrar/current dns for it update it to use custom nameservers:
 
@@ -27,7 +28,7 @@ The `rasa` dir is an example helm setup with a values file for deploying our Ras
 The full documentation and setup can be found below by building out the docs locally or you can visit the generated docs for the cookiecutter located [Here](https://cookiecutter-linode-tf-lke.readthedocs.io/)
 
 # Docs
-Docs are setup with [Sphinx ReadtheDocs](https://docs.readthedocs.io/en/latest/intro/getting-started-with-sphinx.html) and pushed to https://cookiecutter-linode-tf-lke.readthedocs.io/.
+Docs are setup with [Sphinx ReadtheDocs](https://docs.readthedocs.io/en/latest/intro/getting-started-with-sphinx.html) and pushed to https://devops-brian-lke.readthedocs.io/en/latest/.
 
 Ensure you have python3 installed, you can find instructions [Here](https://www.python.org/downloads/) on how to install python.
 
