@@ -1,18 +1,19 @@
-registry: docker.io/devopswithbrian
+rasa-action-server:
+  registry: docker.io/devopswithbrian
 
-extraEnv:
-  - name: API_KEY
-    valueFrom:
-      secretKeyRef:
-        name: jasper-action-secrets
-        key: API_KEY
-  - name: FAUNA_KEY
-    valueFrom:
-      secretKeyRef:
-        name: jasper-action-secrets
-        key: FAUNA_KEY
+  extraEnv:
+    - name: API_KEY
+      valueFrom:
+        secretKeyRef:
+          name: jasper-action-secrets
+          key: API_KEY
+    - name: FAUNA_KEY
+      valueFrom:
+        secretKeyRef:
+          name: jasper-action-secrets
+          key: FAUNA_KEY
 
-image:
-  name: "jasper-actions"
-  tag: "latest"
-  pullPolicy: Always
+  image:
+    name: "jasper-actions"
+    tag: "latest"
+    pullPolicy: Always
