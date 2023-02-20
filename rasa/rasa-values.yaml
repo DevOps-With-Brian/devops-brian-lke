@@ -27,4 +27,4 @@ rasa:
       # -- Determine if external URL is used
       enabled: true
       # -- URL to Rasa Action Server
-      url: "http://rasa-action-rasa-action-server/webhook"
+      url: "http://jasper-action-server-rasa-action-server/webhook"
