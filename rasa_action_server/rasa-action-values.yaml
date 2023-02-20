@@ -2,7 +2,7 @@ registry: docker.io
 
 image:
   name: "devopswithbrian/jasper-actions"
-  tag: "1.2"
+  tag: "latest"
   pullPolicy: Always
 
 extraEnv:
