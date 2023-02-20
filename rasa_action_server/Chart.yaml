@@ -1,0 +1,8 @@
+apiVersion: v2
+name: jasper-action-server
+version: 1.0.0
+
+dependencies:
+- name: rasa-action-server
+  version: "1.0.3"
+  repository: "https://helm.rasa.com"

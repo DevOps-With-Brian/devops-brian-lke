@@ -1,0 +1,18 @@
+registry: docker.io
+
+image:
+  name: "devopswithbrian/jasper-actions"
+  tag: "1.2"
+  pullPolicy: Always
+
+extraEnv:
+    - name: API_KEY
+      valueFrom:
+        secretKeyRef:
+          name: jasper-action-secrets
+          key: API_KEY
+    - name: FAUNA_KEY
+      valueFrom:
+        secretKeyRef:
+          name: jasper-action-secrets
+          key: FAUNA_KEY

@@ -1,0 +1,34 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: rasa-action
+  # You'll usually want to add your resources to the argocd namespace.
+  namespace: argocd
+  # Add labels to your application object.
+  labels:
+    name: rasa
+spec:
+  # The project the application belongs to.
+  project: default
+
+  # Source of the application manifests
+  source:
+    repoURL: git@github.com:DevOps-With-Brian/devops-brian-lke.git
+    path: rasa_action_server
+    targetRevision: main
+
+    helm:
+      valueFiles:
+        - rasa-actions-values.yaml
+  # Destination cluster and namespace to deploy the application
+  destination:
+    # cluster API URL
+    server: https://kubernetes.default.svc
+    namespace: default
+
+
+  # RevisionHistoryLimit limits the number of items kept in the application's revision history, which is used for
+  # informational purposes as well as for rollbacks to previous versions. This should only be changed in exceptional
+  # circumstances. Setting to zero will store no history. This will reduce storage used. Increasing will increase the
+  # space used to store the history, so we do not recommend increasing it.
+  revisionHistoryLimit: 10
