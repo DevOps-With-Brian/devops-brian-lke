@@ -6,7 +6,7 @@ metadata:
   namespace: argocd
   # Add labels to your application object.
   labels:
-    name: rasa
+    name: rasa-action-server
 spec:
   # The project the application belongs to.
   project: default
