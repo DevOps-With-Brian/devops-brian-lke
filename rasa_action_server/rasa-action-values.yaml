@@ -5,12 +5,12 @@ rasa-action-server:
     - name: API_KEY
       valueFrom:
         secretKeyRef:
-          name: jasper-action-secrets
+          name: jasper-prd
           key: API_KEY
     - name: FAUNA_KEY
       valueFrom:
         secretKeyRef:
-          name: jasper-action-secrets
+          name: jasper-prd
           key: FAUNA_KEY
 
   image:
