@@ -2,11 +2,11 @@ rasa-action-server:
   registry: docker.io/devopswithbrian
 
   extraEnv:
-    - name: API_KEY
+    - name: NASA_API_KEY
       valueFrom:
         secretKeyRef:
           name: jasper-prd
-          key: API_KEY
+          key: NASA_API_KEY
     - name: FAUNA_KEY
       valueFrom:
         secretKeyRef:
