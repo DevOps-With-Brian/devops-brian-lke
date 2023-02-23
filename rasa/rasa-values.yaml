@@ -1,7 +1,7 @@
 rasa:
   applicationSettings:
     debugMode: true
-    initialModel: "https://github.com/DevOps-With-Brian/chatbot-auto-versioning/releases/download/0.16.0/model_0.16.0.tar.gz"
+    initialModel: "https://github.com/DevOps-With-Brian/chatbot-auto-versioning/releases/download/0.17.0/model_0.17.0.tar.gz"
     credentials:
       additionalChannelCredentials:
         socketio:
