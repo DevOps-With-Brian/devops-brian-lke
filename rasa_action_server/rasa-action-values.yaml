@@ -7,6 +7,11 @@ rasa-action-server:
         secretKeyRef:
           name: jasper-prd
           key: NASA_API_KEY
+    - name: GITHUB_TOKEN
+      valueFrom:
+        secretKeyRef:
+          name: jasper-prd
+          key: GITHUB_TOKEN
     - name: FAUNA_KEY
       valueFrom:
         secretKeyRef:
