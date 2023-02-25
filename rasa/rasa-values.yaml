@@ -10,18 +10,18 @@ rasa:
           session_persistence: false
         rest:
   image:
-    tag: "3.4.2"
+    tag: "3.4.4"
   nginx:
     enabled: false
-  ingress:
-    enabled: true
-    annotations: {kubernetes.io/ingress.class: 'nginx', cert-manager.io/cluster-issuer: "letsencrypt-prod"}
-    path: "/"
-    hostname: rasa.devopswithbrian.com
-    tls:
-      - secretName: rasa-tls
-        hosts:
-          - rasa.devopswithbrian.com
+  # ingress:
+  #   enabled: true
+  #   annotations: {kubernetes.io/ingress.class: 'nginx', cert-manager.io/cluster-issuer: "letsencrypt-prod"}
+  #   path: "/"
+  #   hostname: rasa.devopswithbrian.com
+  #   tls:
+  #     - secretName: rasa-tls
+  #       hosts:
+  #         - rasa.devopswithbrian.com
   rasa-action-server:
     external:
       # -- Determine if external URL is used
