@@ -17,6 +17,11 @@ rasa-action-server:
         secretKeyRef:
           name: jasper-prd
           key: FAUNA_KEY
+    - name: OPENAI_KEY
+      valueFrom:
+        secretKeyRef:
+          name: jasper-prd
+          key: OPENAI_KEY
 
   image:
     name: "jasper-actions"
