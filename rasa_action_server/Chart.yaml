@@ -23,5 +23,5 @@ appVersion: "1.0"
 
 dependencies:
 - name: rasa-action-server
-  version: "1.0.3"
+  version: "1.0.8"
   repository: "https://helm.rasa.com"
