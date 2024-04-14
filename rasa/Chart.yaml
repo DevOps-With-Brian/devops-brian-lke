@@ -4,5 +4,5 @@ version: 1.0.0
 
 dependencies:
 - name: rasa
-  version: "1.17.4"
+  version: "1.17.7"
   repository: "https://helm.rasa.com"
